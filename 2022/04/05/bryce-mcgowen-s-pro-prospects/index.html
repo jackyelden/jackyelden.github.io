@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.96.0" />
+
+
+<title>Bryce McGowen&#39;s Pro Prospects - Jack Yelden&#39;s Blog</title>
+<meta property="og:title" content="Bryce McGowen&#39;s Pro Prospects - Jack Yelden&#39;s Blog">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Bryce McGowen&#39;s Pro Prospects</h1>
+
+    
+    <span class="article-date">2022-04-05</span>
+    
+
+    <div class="article-content">
+      
+
+
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</code></pre>
+<pre><code>## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.6     v dplyr   1.0.8
+## v tidyr   1.1.4     v stringr 1.4.0
+## v readr   2.1.1     v forcats 0.5.1</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(hoopR)
+library(ggrepel)</code></pre>
+<pre class="r"><code>hwdraft2021 &lt;- do.call(rbind.data.frame, nba_draftcombineplayeranthro(season_year = &quot;2021&quot;)) %&gt;%
+  mutate(HEIGHT_WO_SHOES = as.numeric(HEIGHT_WO_SHOES)) %&gt;%
+  mutate(WEIGHT = as.numeric(WEIGHT))
+hwdraft2020 &lt;- do.call(rbind.data.frame, nba_draftcombineplayeranthro(season_year = &quot;2020&quot;)) %&gt;%
+  mutate(HEIGHT_WO_SHOES = as.numeric(HEIGHT_WO_SHOES)) %&gt;%
+  mutate(WEIGHT = as.numeric(WEIGHT))
+hwdraft2019 &lt;- do.call(rbind.data.frame, nba_draftcombineplayeranthro(season_year = &quot;2019&quot;)) %&gt;%
+  mutate(HEIGHT_WO_SHOES = as.numeric(HEIGHT_WO_SHOES)) %&gt;%
+  mutate(WEIGHT = as.numeric(WEIGHT))
+hwdraft2018 &lt;- do.call(rbind.data.frame, nba_draftcombineplayeranthro(season_year = &quot;2018&quot;)) %&gt;%
+  mutate(HEIGHT_WO_SHOES = as.numeric(HEIGHT_WO_SHOES)) %&gt;%
+  mutate(WEIGHT = as.numeric(WEIGHT))
+
+sga &lt;- hwdraft2018 %&gt;%
+  filter(PLAYER_NAME == &quot;Shai Gilgeous-Alexander&quot;)</code></pre>
+<pre class="r"><code>ggplot() +
+  geom_point(data = hwdraft2021, aes(x = HEIGHT_WO_SHOES, y = WEIGHT)) +
+  geom_point(data = hwdraft2020, aes(x = HEIGHT_WO_SHOES, y = WEIGHT)) +
+  geom_point(data = hwdraft2019, aes(x = HEIGHT_WO_SHOES, y = WEIGHT)) +
+  geom_point(data = hwdraft2018, aes(x = HEIGHT_WO_SHOES, y = WEIGHT)) +
+  geom_text(x = 77.5, y = 175, aes(label = &quot;Shai Gilgeous-Alexander&quot;), size = 3) +
+  geom_point(aes(x = 79, y = 179), color = &quot;red&quot;)</code></pre>
+<pre><code>## Warning: Removed 9 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 8 rows containing missing values (geom_point).</code></pre>
+<p><img src="/2022/04/05/bryce-mcgowen-s-pro-prospects/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
