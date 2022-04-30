@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.96.0" />
+
+
+<title>The 2017 Jacksonville Jaguars were an anomaly - Jack Yelden&#39;s Blog</title>
+<meta property="og:title" content="The 2017 Jacksonville Jaguars were an anomaly - Jack Yelden&#39;s Blog">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">The 2017 Jacksonville Jaguars were an anomaly</h1>
+
+    
+    <span class="article-date">2022-04-26</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>If you are looking at NFL teams that with the most success in recent years, the Jacksonville Jaguars are going to be near the very bottom. They have struggled with winning games in recent years, and there hasn’t been a whole lot to cheer for.
+During the 2010s, the Jaguars ended up going 51-109 for a winning percentage of .319. That was good enough to put them in 31st out of 32 teams. Only the Browns won less games, but since they have turned things around and strung together some nice seasons. They’ve lost double digit games in 10 out of 11 of the previous seasons. I could keep going, but I think you get the point.
+The Jaguars have been really bad recently, but that changed in 2017 when they held the lead in the 4th quarter of the AFC Championship Game with a chance to go to the Super Bowl.
+The 2017 Jaguars were one of the weirdest teams of all time because of how they really came out of nowhere and faded into obscurity again after being one of the last 4 teams playing in 2017. Let’s go ahead and take a closer look at the team that year and how they were able to finally make the playoffs and have a successful season.</p>
+<pre class="r"><code>offenselogs &lt;- read_csv(&quot;OffenseLogs.csv&quot;)</code></pre>
+<pre><code>## Rows: 10 Columns: 4
+## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr (2): Team, Type
+## dbl (2): Season, TDs
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>ggplot() + geom_bar(data = offenselogs, aes(x = Season, weight = TDs, fill = Type))+
+  scale_fill_manual(values = c(&quot;#006778&quot;,&quot;#FDCA40&quot;))+
+  labs(
+    title = &quot;The 2017 Jaguars offense was more well balanced than they usually are&quot;,
+    subtitle = &quot;The 2015 offense scored more, but the 2017 offense was significantly more well balanced.&quot;,
+    x = &quot;Season&quot;,
+    y = &quot;Total Offensive Touchdowns&quot;,
+    caption = &quot;Source: Football Reference | By Jack Yelden&quot;
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = &quot;plot&quot;,
+    plot.title = element_text(size = 15, face = &quot;bold&quot;),
+    plot.subtitle = element_text(size=11))</code></pre>
+<p><img src="/2022/04/26/the-2017-jaguars-were-an-anomaly/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+First off, their offense was really efficient. The Jaguars again have struggled to get points on the board, but that wasn’t really a problem in 2017. They were able to run the ball really well and scored more points than they did in the adjacent seasons. They had their best rushing attack in years with the addition of Leonard Fournette and finally got double digit rushing touchdowns.
+That being said, anyone who watched Jaguars games that year knows that the offense did not have to do much. The defense was one of the best of the last decade and it was pretty obvious that they were the reason the Jaguars won 10 games in 2017. Even considering this, the season before, the Jaguars defense was nothing special, but they did good to add players that would make an impact in free agency.
+<img src="/2022/04/26/the-2017-jaguars-were-an-anomaly/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+Based on Football Reference’s Points Added, the 2017 Jaguars were the best defense of those 5 years. That statistic estimates how many points the defense contributed towards. In general, having a positive number is good, but having a number in the 200s is almost unheard of. In general, this defense carried them and provided the Jaguars with a great chance to win almost no matter what the offense did.
+Players like Jalen Ramsey, Calais Campbell and Myles Jack all contributed to the team performing consistently every week. Along with this, the team was lucky with injuries and saw none of their contributors on defense miss significant time with any injuries. This led to a unit with good chemistry and enough skill to win games. Something the Jaguars have been searching for since.
+<img src="/2022/04/26/the-2017-jaguars-were-an-anomaly/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+The 2017 Jaguars were also extremely opportunistic. Teams have very few chances to make plays like these that can change the whole outcome of a game, but the 2017 team took every chance they had. This is another thing that they have not been able to replicate since. They haven’t been able to generate turnovers or sacks since that season and even before, they always struggled to make these plays.
+We all know how that team ended. A loss to Tom Brady and the Patriots and eventually with most of the players finding their way off the team either through a forced trade or leaving in free agency. It also remains true that in 2018, the team returned the main core of their defense but was never able to find that spark again.
+Ever since then, the team has failed to have even an ounce of success. The teams have been terrible and there have been very few silver linings. As a Jaguars fan, I hope that the team is able to find some successful players that can help turn the ship around. As fun as it is drafting in the top 10 every year, nothing will compare to that 2017 team in my heart and what they meant to the fans.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
